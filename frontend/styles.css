@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#app {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#maze-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#generate-maze, #solve-maze {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+#generate-maze:hover, #solve-maze:hover {
+    background-color: #3e8e41;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    color: blue;
+}
+
+label {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+.cell {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.cell.start {
+    background-color: rgb(111, 218, 111);
+}
+
+.cell.end {
+    background-color: crimson;
+}
+
+.cell.path {
+    background-color: cornflowerblue;
+}
