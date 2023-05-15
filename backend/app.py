@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import numpy as np
-from lab import generate_maze, bfs
+from lab import generate_maze, dijkstra
 
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ def solve():
     maze = np.array(request.json['maze'])
     start = tuple(request.json['start'])
     end = tuple(request.json['end'])
-    path = bfs(maze, start, end)
+    path = dijkstra(maze, start, end)
     return jsonify({'path': path})
 
 if __name__ == '__main__':

@@ -1,6 +1,8 @@
 import numpy as np
 from collections import deque
 import random
+import heapq
+
 
 def generate_maze(size):
     def in_bounds(x, y):
@@ -31,22 +33,51 @@ def generate_maze(size):
     return start, end, maze
 
 
-def bfs(maze, start, end):
+def get_neighbors(maze, node):
     rows, cols = maze.shape
-    visited = np.zeros_like(maze, dtype=bool)
-    queue = deque([(start, [])])
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    neighbors = []
+    for dr, dc in directions:
+        r, c = node
+        nr, nc = r + dr, c + dc
+        if 0 <= nr < rows and 0 <= nc < cols and maze[nr, nc] != 1:
+            neighbors.append((nr, nc))
+    return neighbors
+
+
+def reconstruct_path(distances, start, end):
+    path = [end]
+    current_node = end
+    while current_node != start:
+        current_node = distances[current_node][1]
+        path.append(current_node)
+    path.reverse()
+    return path
+
+
+def dijkstra(maze, start, end):
+    rows, cols = maze.shape
+    distances = {(r, c): (float('inf'), None) for r in range(rows) for c in range(cols)}
+    distances[start] = (0, None)
+
+    queue = [(0, start)]
+    heapq.heapify(queue)
 
     while queue:
-        (y, x), path = queue.popleft()
+        current_distance, current_node = heapq.heappop(queue)
 
-        if (y, x) == end:
-            return path + [(y, x)]
+        if current_node == end:
+            break
 
-        if not visited[y, x]:
-            visited[y, x] = True
-            for dy, dx in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-                ny, nx = y + dy, x + dx
-                if 0 <= ny < rows and 0 <= nx < cols and not visited[ny, nx] and maze[ny, nx] == 0:
-                    queue.append(((ny, nx), path + [(y, x)]))
+        if current_distance > distances[current_node][0]:
+            continue
 
-    return None
+        neighbors = get_neighbors(maze, current_node)
+        for neighbor in neighbors:
+            neighbor_distance = current_distance + 1  # Assuming all edges have weight 1
+            if neighbor_distance < distances[neighbor][0]:
+                distances[neighbor] = (neighbor_distance, current_node)
+                heapq.heappush(queue, (neighbor_distance, neighbor))
+
+    path = reconstruct_path(distances, start, end)
+    return path

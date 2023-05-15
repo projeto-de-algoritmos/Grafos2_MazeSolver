@@ -1,7 +1,7 @@
 # Maze Solver
 
 
-**Conteúdo da Disciplina**: Grafos1<br>
+**Conteúdo da Disciplina**: Grafos2<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -11,11 +11,11 @@
 
 ## Video da Apresentação
 
-[Link do Vídeo](https://www.youtube.com/watch?v=9lbVdAesC2c)
+[Link do Vídeo]()
 
 
 ## Sobre 
-O projeto é um Maze Solver, um programa que representa um labirinto como um grafo, onde cada célula do labirinto é um nó do grafo e as paredes entre as células são as arestas. O objetivo é implementar o algoritmo de busca em largura (BFS) para encontrar o caminho mais rápido entre o nó inicial e o nó final do labirinto
+O projeto é um Maze Solver, um programa que representa um labirinto como um grafo, onde cada célula do labirinto é um nó do grafo e as paredes entre as células são as arestas. O objetivo é implementar o algoritmo de Dijkstra para encontrar o caminho mais rápido entre o nó inicial e o nó final do labirinto
 
 ## Screenshots
 ![ScreenShot1](./img/img1.png)
@@ -49,7 +49,7 @@ Abra outro terminal na pasta **Script** e execute  o comando:
 ## Uso 
 Selecione o tamanho do labirinto que deseja criar, click em **Generate Maze** para gerar o labirinto e em **Solve Maze** para exibir o caminho mais rápido entre o inicio e o fim.
 
-## Outros 
+## Outros
 - É permitido que o usuário adicione ou remova paredes manualmente e ver como isso afeta a solucionabilidade do labirinto. Experimente!
 - Para uma melhor experiencia, não utrapasse **50** de tamanho do labirinto.
 
