@@ -74,7 +74,7 @@ def dijkstra(maze, start, end):
 
         neighbors = get_neighbors(maze, current_node)
         for neighbor in neighbors:
-            neighbor_distance = current_distance + 1  # Assuming all edges have weight 1
+            neighbor_distance = current_distance + 1  
             if neighbor_distance < distances[neighbor][0]:
                 distances[neighbor] = (neighbor_distance, current_node)
                 heapq.heappush(queue, (neighbor_distance, neighbor))
