@@ -9,18 +9,13 @@
 | 19/0118555  |  Wengel Rodrigues Farias |
 
 
-## Video da Apresentação
-
-[Link do Vídeo](https://www.youtube.com/watch?v=oQ21hHiz8Xc&feature=youtu.be)
-
-
 ## Sobre 
 O projeto é um Maze Solver, um programa que representa um labirinto como um grafo, onde cada célula do labirinto é um nó do grafo e as paredes entre as células são as arestas. O objetivo é implementar o algoritmo de Dijkstra para encontrar o caminho mais rápido entre o nó inicial e o nó final do labirinto
 
 ## Screenshots
-![ScreenShot1](./img/img1.png)
-![ScreenShot2](./img/img2.png)
-![ScreenShot3](./img/img3.png) 
+![ScreenShot1](./assets/img1.png)
+![ScreenShot2](./assets/img2.png)
+![ScreenShot3](./assets/img3.png) 
 
 ## Instalação 
 **Linguagem**: Python<br>
@@ -54,4 +49,6 @@ Selecione o tamanho do labirinto que deseja criar, click em **Generate Maze** pa
 - Para uma melhor experiencia, não utrapasse **50** de tamanho do labirinto.
 
 
+## Video da Apresentação
 
+[Link do Vídeo](https://www.youtube.com/watch?v=oQ21hHiz8Xc&feature=youtu.be)
