@@ -52,3 +52,6 @@ Selecione o tamanho do labirinto que deseja criar, click em **Generate Maze** pa
 ## Video da Apresentação
 
 [Link do Vídeo](https://www.youtube.com/watch?v=oQ21hHiz8Xc&feature=youtu.be)
+
+https://github.com/projeto-de-algoritmos/Grafos2_MazeSolver/assets/88208512/aa0ea05d-a6f9-4782-a91d-f76e6b74ee97
+
